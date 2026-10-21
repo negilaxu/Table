@@ -19,62 +19,34 @@
         <h1>Most Active Users</h1>
 
         <!-- Loader -->
-        <div class="spinner" id="spinner">
+        <div class="spinner" id="spinner" style="display: none;">
             <i class="fa-solid fa-circle-notch fa-spin"></i>
         </div>
 
         <!-- Table -->
-        <table id="data-table">
+        <table id="data-table" style="display: none;">
             <thead>
                 <tr>
-                    <th class="name-column">Name<i class="fas fa-sort" id="icon-0"></i></th>
-                    <th class="email-column">Email<i class="fas fa-sort" id="icon-1"></i></th>
-                    <th class="username-column">Username<i class="fas fa-sort" id="icon-2"></i></th>
-                    <th class="country-column">Country<i class="fas fa-sort" id="icon-3"></i></th>
+                    <th onclick="sortTable(0)" class="name-column">Name<i class="fas fa-sort" id="icon-0"></i></th>
+                    <th onclick="sortTable(1)" class="email-column">Email<i class="fas fa-sort" id="icon-1"></i></th>
+                    <th onclick="sortTable(2)" class="username-column">Username<i class="fas fa-sort" id="icon-2"></i></th>
+                    <th onclick="sortTable(3)" class="country-column">Country<i class="fas fa-sort" id="icon-3"></i></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Name Here</td>
-                    <td>Email Here</td>
-                    <td>Username Here</td>
-                    <td>Country Here</td>
-                </tr>
-                <tr>
-                    <td>Name Here</td>
-                    <td>Email Here</td>
-                    <td>Username Here</td>
-                    <td>Country Here</td>
-                </tr>
-                <tr>
-                    <td>Name Here</td>
-                    <td>Email Here</td>
-                    <td>Username Here</td>
-                    <td>Country Here</td>
-                </tr>
-                <tr>
-                    <td>Name Here</td>
-                    <td>Email Here</td>
-                    <td>Username Here</td>
-                    <td>Country Here</td>
-                </tr>
-                <tr>
-                    <td>Name Here</td>
-                    <td>Email Here</td>
-                    <td>Username Here</td>
-                    <td>Country Here</td>
-                </tr>
+            <tbody id="table-body">
+                <!-- Dynamically added rows -->
             </tbody>
         </table>
 
         <!-- Pagination -->
-        <div class="pagination">
-            <button type="button" id="prev-btn" title="Previous Page"><i class="fas fa-chevron-left"></i></button>
+        <div class="pagination" id="pagination" style="display: none;">
+            <button type="button" id="prev-btn" title="Previous Page" onclick="prevPage()"><i class="fas fa-chevron-left"></i></button>
             <span id="page-number">1</span>
-            <button type="button" id="next-btn" title="Next Page"><i class="fas fa-chevron-right"></i></button>
+            <button type="button" id="next-btn" title="Next Page" onclick="nextPage()"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
-
+    
+<script src="script.js"></script>
 </body>
 
 </html>
